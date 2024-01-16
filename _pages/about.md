@@ -11,13 +11,17 @@ Shengdi Zhou (1999.02), received her B.Eng. degree (2019 - 2021) from School of 
 
 Her research focuses on mergers and acquisitions and digital economy.
 
-Selected Awards
-======
-
 Publications
 ======
+1. 2023 论文获奖第四届浦江论坛优胜奖《融资约束下的企业并购：求救动机还是制约条件》
+2. 2023 论文入选第9届中国金融管理年会《数字化转型、企业适度规模与并购行为》
+3. 2023 论文获奖统计建模大赛市三《determinants of successful mergers and acquisitions in China：evidents from machine learning》
+4. 并购案例《300015爱尔眼科: 眼茅狂飙，鲸吞近30家医院》、《002843 泰嘉股份：高溢价收购微利资产，开启双主业赛道》被编入《中国证劵市场典型并购案例2022》
 
 
 Academic Services
 ======
 - Part time researcher at Shanghai Institute of Mergers and Acquisitions Finance
+
+Selected Awards
+======
