@@ -13,11 +13,10 @@ Her research focuses on mergers and acquisitions and digital economy.
 
 Publications
 ======
-1. 2023 论文获奖第四届浦江论坛优胜奖《融资约束下的企业并购：求救动机还是制约条件》
-2. 2023 论文入选第9届中国金融管理年会《数字化转型、企业适度规模与并购行为》
-3. 2023 论文获奖统计建模大赛市三《determinants of successful mergers and acquisitions in China：evidents from machine learning》
-4. 并购案例《300015爱尔眼科: 眼茅狂飙，鲸吞近30家医院》、《002843 泰嘉股份：高溢价收购微利资产，开启双主业赛道》被编入《中国证劵市场典型并购案例2022》
-
+1. 2023, Award-winning Paper at the 4th Pujiang Forum: "Corporate Mergers and Acquisitions under Financing Constraints: Motivation for Rescue or Restrictive Conditions"
+2. 2023, Paper Selected for the 9th China Financial Management Annual Conference: "Digital Transformation, Optimal Enterprise Scale, and Mergers and Acquisitions Behavior"
+3. 2023, Award-winning Paper at the Statistical Modeling Competition: "Determinants of Successful Mergers and Acquisitions in China: Evidence from Machine Learning" (City Three)
+4. 2023, Mergers and Acquisitions Case Studies included in "Typical Mergers and Acquisitions Cases in the Chinese Securities Market 2022", including "300015 Elens: Surge in Ophthalmic Market, Acquiring Nearly 30 Hospitals", and "002843 Taijia Holdings: High Premium Acquisition of Marginally Profitable Assets, Initiating a Dual-Core Business Track"
 
 Academic Services
 ======
