@@ -27,8 +27,8 @@ Her research focuses on mergers and acquisitions and digital economy.
 
 📖 Educations
 ======
-- 2021.09 - Now, PhD, Data Science and Engineering College, East China Normal University.
-- 2017.09 - 2021.06, Undergraduate, Software Engineering College, East China Normal University.
+- 2021.09 - Now, PhD, School of Economy and Management, East China Normal University.
+- 2017.09 - 2021.06, Undergraduate, School of Economy and Management, East China Normal University.
 
 📚 Academic Services
 ======
