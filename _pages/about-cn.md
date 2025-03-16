@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 周胜娣 (1999.02), 于2017至2021年在[华东师范大学](https://www.ecnu.edu.cn/)的[经济与管理学院](](https://sem.ecnu.edu.cn/) )获得学士学位。
-目前, 我在华东师范大学[经济与管理学院](https://sem.ecnu.edu.cn/)攻读博士学位 (2021.09 - 2026.06), 导师为[蓝发钦教授]。
+目前, 我在华东师范大学[经济与管理学院](https://sem.ecnu.edu.cn/)攻读博士学位 (2021.09 - 2026.06), 导师为[蓝发钦教授](https://faculty.ecnu.edu.cn/_s35/lfq_en/main.psp)。
 
 我的研究方向主要包括企业并购、数字经济和公司金融。
 
