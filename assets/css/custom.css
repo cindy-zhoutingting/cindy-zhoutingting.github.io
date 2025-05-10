@@ -1,0 +1,1809 @@
+.news-container {
+  height: 220px !important;
+  position: relative;
+  margin: 8px 0 !important;
+  padding-right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: 10px !important;
+}
+
+.news-scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* 调整新闻列表样式 */
+.news-scroll ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.news-scroll li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* 滚动条样式 - 增加宽度 */
+.news-scroll::-webkit-scrollbar {
+  width: 10px;  /* 从6px增加到10px */
+}
+
+.news-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;  /* 稍微增加圆角 */
+}
+
+.news-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);  /* 稍微增加不透明度 */
+  border-radius: 4px;
+}
+
+.news-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+  .news-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .news-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+:root {
+  --primary-color: #302AE6;
+  --secondary-color: #536390;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+  --border-color: #ddd;
+  --link-color: #1756a9;
+}
+
+[data-theme="dark"] {
+  --primary-color: #9A97F3;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --heading-color: #e1e1ff;
+  --border-color: #444;
+  --link-color: #599cde;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  transition: background-color 0.3s ease;
+  padding-top: 0 !important;
+  font-family: "Times New Roman", Times, serif !important;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  opacity: 0;
+  animation: fadeInPage 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInPage {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 内容逐步显示动画 */
+h2, p, ul, .publications, .news-container {
+  opacity: 0;
+  animation: fadeInContent 0.8s ease-in-out forwards;
+}
+
+h2 { animation-delay: 0.2s; }
+p { animation-delay: 0.3s; }
+ul { animation-delay: 0.4s; }
+.news-container { animation-delay: 0.5s; }
+.publications { animation-delay: 0.6s; }
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px dotted transparent;
+}
+
+a:hover {
+  border-bottom-color: var(--link-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: "Times New Roman", Times, serif !important;
+  text-align: left !important;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.theme-switch-wrapper em {
+  margin-left: 10px;
+  font-size: 0.8rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 50px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 16px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* 适配深色模式下的新闻容器 */
+[data-theme="dark"] .news-container {
+  border-color: var(--border-color);
+  background-color: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 深色模式下的滚动条 */
+[data-theme="dark"] .news-scroll::-webkit-scrollbar-track {
+  background: #2d2d40;
+}
+
+[data-theme="dark"] .news-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);  /* 增加不透明度 */
+}
+
+[data-theme="dark"] .news-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* 顶部栏样式 */
+.top-bar {
+  position: fixed;
+  top: 5px;  /* 从10px改为5px */
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: right;
+  padding: 2px 0;  /* 从5px改为2px */
+}
+
+.top-bar .container {
+  padding-right: 20px;
+}
+
+/* 顶部深色模式切换按钮 */
+.dark-mode-toggle-top button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--font-color);
+  padding: 0px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode-toggle-top button:hover {
+  transform: rotate(30deg);
+}
+
+[data-theme="dark"] .dark-mode-toggle-top button {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .dark-mode-toggle-top button:hover {
+  transform: rotate(30deg);
+}
+
+/* 移动设备适配 */
+@media (max-width: 768px) {
+  .top-bar {
+    text-align: center;
+  }
+
+  .top-bar .container {
+    padding-right: 0;
+  }
+}
+
+/* 深色模式下的正文内容 */
+[data-theme="dark"] body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+/* 深色模式下的标题 */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--heading-color);
+}
+
+/* 深色模式下的链接 */
+[data-theme="dark"] a {
+  color: var(--link-color);
+}
+
+/* 深色模式下的段落文本 */
+[data-theme="dark"] p {
+  color: var(--font-color);
+}
+
+/* 深色模式下的列表项 */
+[data-theme="dark"] li {
+  color: var(--font-color);
+}
+
+/* 深色模式下的表格 */
+[data-theme="dark"] table {
+  color: var(--font-color);
+}
+
+/* 深色模式下的引用 */
+[data-theme="dark"] blockquote {
+  color: var(--font-color);
+  border-left-color: var(--border-color);
+}
+
+/* 深色模式下的代码块 */
+[data-theme="dark"] code {
+  background-color: #2d2d40;
+  color: #e1e1ff;
+}
+
+/* 深色模式下的预格式化文本 */
+[data-theme="dark"] pre {
+  background-color: #2d2d40;
+  color: #e1e1ff;
+}
+
+/* 深色模式下的分隔线 */
+[data-theme="dark"] hr {
+  border-color: var(--border-color);
+}
+
+/* 深色模式下的表单元素 */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: #2d2d40;
+  color: var(--font-color);
+  border-color: var(--border-color);
+}
+
+/* 深色模式下的按钮 */
+[data-theme="dark"] button {
+  background-color: #2d2d40;
+  color: var(--font-color);
+  border-color: var(--border-color);
+}
+
+/* 深色模式下的新闻项目 */
+[data-theme="dark"] .news-scroll li strong {
+  color: #a2c4fd;
+}
+
+/* 深色模式下的出版物部分 */
+[data-theme="dark"] .publications .col-sm-9 {
+  color: var(--font-color);
+}
+
+[data-theme="dark"] .publications .title {
+  color: var(--link-color);
+}
+
+[data-theme="dark"] .publications .author {
+  color: var(--font-color);
+}
+
+/* 深色模式下的页脚 */
+[data-theme="dark"] footer {
+  color: var(--font-color);
+}
+
+/* 深色模式下的小文本 */
+[data-theme="dark"] small {
+  color: var(--font-color);
+}
+
+/* 深色模式下的粗体文本 */
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+  color: #a2c4fd;
+}
+
+/* 深色模式下的列表项中的粗体文本 */
+[data-theme="dark"] li strong,
+[data-theme="dark"] li b {
+  color: #a2c4fd;
+}
+
+/* 深色模式下的特定文本颜色 */
+[data-theme="dark"] .wrapper {
+  color: var(--font-color);
+}
+
+[data-theme="dark"] section {
+  color: var(--font-color);
+}
+
+/* 深色模式下的特定元素 */
+[data-theme="dark"] position,
+[data-theme="dark"] email,
+[data-theme="dark"] autocolor {
+  color: var(--font-color);
+}
+
+/* 深色模式下的彩色文本 */
+[data-theme="dark"] span[style*="color"] {
+  filter: brightness(1.2);
+}
+
+/* 确保所有文本在深色模式下可见 */
+[data-theme="dark"] * {
+  color: var(--font-color);
+}
+
+/* 特定元素的例外 */
+[data-theme="dark"] a,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] strong,
+[data-theme="dark"] b,
+[data-theme="dark"] .news-scroll li strong,
+[data-theme="dark"] .publications .title {
+  color: inherit;
+}
+
+/* 深色模式下的出版物按钮 - 更具体的选择器 */
+[data-theme="dark"] .publications .links a.btn,
+[data-theme="dark"] .publications .links a.btn.z-depth-0 {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .publications .links a.btn:hover,
+[data-theme="dark"] .publications .links a.btn.z-depth-0:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 确保按钮中的文本在深色模式下可见 - 使用更高优先级 */
+[data-theme="dark"] .btn,
+[data-theme="dark"] a.btn,
+[data-theme="dark"] .btn.z-depth-0,
+[data-theme="dark"] a.btn.z-depth-0 {
+  color: #fff !important;
+}
+
+/* 修复出版物中的强调文本 */
+[data-theme="dark"] .publications .periodical em {
+  color: #a2c4fd;
+}
+
+/* 修复出版物中的注释文本 */
+[data-theme="dark"] .publications .links strong i {
+  color: #e74d3c !important;
+}
+
+/* 修复深色模式下的 PDF 和 Code 按钮 - 使用更具体的选择器和更高优先级 */
+[data-theme="dark"] .publications .links a.btn.btn-sm.z-depth-0,
+[data-theme="dark"] .publications .links a.btn.btn-sm {
+  color: white !important;
+  background-color: #444 !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  text-shadow: none !important;
+}
+
+[data-theme="dark"] .publications .links a.btn.btn-sm.z-depth-0:hover,
+[data-theme="dark"] .publications .links a.btn.btn-sm:hover {
+  background-color: #555 !important;
+}
+
+/* 覆盖任何可能的内联样式 */
+[data-theme="dark"] .publications .links a[role="button"] {
+  color: white !important;
+  background-color: #444 !important;
+}
+
+/* 确保按钮内的所有文本都是白色 */
+[data-theme="dark"] .publications .links a.btn.btn-sm.z-depth-0 *,
+[data-theme="dark"] .publications .links a.btn.btn-sm * {
+  color: white !important;
+}
+
+/* 确保 CCF-A 标签在深色模式下保持红色但更亮 */
+[data-theme="dark"] .publications .links strong i[style*="color:#e74d3c"] {
+  color: #ff6b5b !important;
+}
+
+/* 修复所有按钮文本颜色 */
+[data-theme="dark"] .btn {
+  color: white !important;
+}
+
+/* 设置全站字体为 Times New Roman */
+body,
+h1, h2, h3, h4, h5, h6,
+p, a, li, td, th,
+.wrapper,
+section,
+header {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+/* 确保代码块使用等宽字体 */
+code, pre {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+/* 标题颜色增强 */
+h2 i {
+  background: linear-gradient(120deg, #2b5876, #4e4376);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 5px;
+}
+
+/* 为不同部分的标题图标设置不同颜色 */
+h2 i.fa-user-graduate {
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-lightbulb {
+  background: linear-gradient(120deg, #f09819, #edde5d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-newspaper {
+  background: linear-gradient(120deg, #00b09b, #96c93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-file-alt {
+  background: linear-gradient(120deg, #3a7bd5, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-handshake {
+  background: linear-gradient(120deg, #4568dc, #b06ab3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-briefcase {
+  background: linear-gradient(120deg, #0f0c29, #302b63);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-chalkboard-teacher {
+  background: linear-gradient(120deg, #8e2de2, #4a00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-award {
+  background: linear-gradient(120deg, #f83600, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 i.fa-map-marker-alt {
+  background: linear-gradient(120deg, #11998e, #38ef7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 深色模式下保持图标颜色 */
+[data-theme="dark"] h2 i {
+  opacity: 0.9;
+}
+
+/* 标题美化 */
+h2 {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 10px;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  position: relative;
+}
+
+[data-theme="dark"] h2 {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 标题下划线动画效果 */
+h2:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+}
+
+/* 列表项美化 */
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+ul li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* 研究兴趣部分美化 - 删除或注释掉这部分 */
+/* #research-interests + ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-left: 0;
+}
+
+#research-interests + ul > li {
+  flex: 1 1 45%;
+  background: linear-gradient(to right, rgba(0,0,0,0.02), transparent);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+} */
+
+/* 添加新的列表样式 */
+#research-interests > ul {
+  list-style-type: none !important;
+  padding-left: 20px !important;
+  display: block !important;  /* 覆盖之前的 flex 布局 */
+  gap: 0 !important;
+}
+
+#research-interests > ul > li {
+  position: relative !important;
+  padding-left: 20px !important;
+  margin-bottom: 15px !important;
+  flex: none !important;  /* 覆盖之前的 flex 设置 */
+  background: none !important;  /* 移除背景渐变 */
+  box-shadow: none !important;  /* 移除阴影 */
+  border-radius: 0 !important;
+}
+
+#research-interests > ul > li:before {
+  content: "❖" !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: var(--primary-color) !important;
+  font-size: 0.85em !important;
+  top: 5px !important;
+}
+
+#research-interests > ul > li > ul {
+  list-style-type: none !important;
+  padding-left: 15px !important;
+  margin-top: 5px !important;
+}
+
+#research-interests > ul > li > ul > li {
+  position: relative !important;
+  padding-left: 15px !important;
+  margin-bottom: 5px !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+#research-interests > ul > li > ul > li:before {
+  content: "✤" !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: var(--primary-color) !important;
+  font-size: 0.9em !important;
+  opacity: 0.85 !important;
+  top: 5px !important;
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] #research-interests > ul > li:before,
+[data-theme="dark"] #research-interests > ul > li > ul > li:before {
+  color: var(--link-color) !important;
+}
+
+/* 经验部分美化 */
+h4 {
+  color: var(--primary-color);
+  margin-top: 20px;
+}
+
+[data-theme="dark"] h4 {
+  color: #a2c4fd;
+}
+
+/* 访客地图美化 */
+div[style*="text-align: center"] {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] div[style*="text-align: center"] {
+  background-color: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 添加页面过渡动画 */
+.wrapper {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 美化出版物部分 */
+.publications .pub-row {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.publications .pub-row:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .publications .pub-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 页面导航样式 */
+.page-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0 40px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page-nav a {
+  margin: 5px 15px;
+  padding: 5px 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.page-nav a:hover {
+  border-bottom-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* 深色模式下的导航样式 */
+[data-theme="dark"] .page-nav {
+  background-color: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .page-nav a {
+  color: var(--link-color);
+}
+
+[data-theme="dark"] .page-nav a:hover {
+  border-bottom-color: var(--link-color);
+}
+
+/* 平滑滚动效果 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Further reduce spacing between publication entries */
+.publications ol.bibliography {
+  margin-top: 10px !important;
+}
+
+.publications ol.bibliography li {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+  padding: 10px !important;
+  margin-bottom: 15px !important;
+}
+
+/* 减少论文标题和作者之间的间距 */
+.publications .title {
+  margin-bottom: 5px !important;
+}
+
+/* 减少作者和会议信息之间的间距 */
+.publications .author {
+  margin-bottom: 3px !important;
+}
+
+/* 减少会议信息和链接之间的间距 */
+.publications .periodical {
+  margin-bottom: 3px !important;
+}
+
+/* 调整论文图片大小和间距 */
+.publications .abbr {
+  height: auto !important;
+}
+
+.publications .abbr img {
+  max-width: 100% !important;
+  height: auto !important;
+  margin-bottom: 0 !important;
+}
+
+/* 减少论文条目内部元素的间距 */
+.publications .row {
+  margin-bottom: 0 !important;
+}
+
+/* 减少标签和引用计数的上边距 */
+.publications .links .tags {
+  margin-top: 3px !important;
+}
+
+/* 减少论文部分的上边距 */
+#publications + p {
+  margin-top: 1px !important;
+  margin-bottom: 1px !important;
+}
+
+/* 减少论文列表的上边距 */
+.publications {
+  margin-top: 1px !important;
+}
+
+/* 减少第一个标题与顶部的距离 */
+h2:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 1px !important;
+}
+
+/* 减少整体容器的顶部边距 */
+.container {
+  padding-top: 1px !important;
+}
+
+/* 调整主要内容区域的上边距 */
+.wrapper {
+  margin-top: 20px !important;  /* 从30px改为20px */
+}
+
+/* publications 页面特别设置 */
+.publications-page .wrapper {
+  margin-top: 15px !important;  /* 从20px改为15px */
+}
+
+/* 减少页面主体内容的顶部边距 */
+main, .main-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 确保页面内容紧贴顶部 */
+.page-content {
+  padding-top: 0 !important;
+}
+
+/* 进一步减少出版物之间的间距 - 更强力的规则 */
+.publications ol.bibliography li {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+/* 减少出版物内部元素的间距 */
+.publications .row {
+  margin: 0 !important;
+  padding: 5px 0 !important;
+}
+
+/* 减少图片容器的大小 */
+.publications .abbr {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+}
+
+.publications .abbr img {
+  max-height: 80px !important;
+  margin: 0 !important;
+}
+
+/* 减少标题和作者之间的间距 */
+.publications .title {
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.publications .author {
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.publications .periodical {
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 减少链接区域的间距 */
+.publications .links {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.3 !important;
+}
+
+/* 确保所有内部元素紧凑排列 */
+.publications * {
+  line-height: 1.3 !important;
+}
+
+/* 强制覆盖任何可能的内联样式 */
+.publications .row > * {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 确保列之间没有额外的间距 */
+.publications .col-sm-3,
+.publications .col-sm-9 {
+  padding: 0 5px !important;
+}
+
+/* 添加两端对齐样式 */
+p, li, .publications .author, .publications .periodical, .publications .title {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+/* 保持标题居左对齐 */
+h1, h2, h3, h4, h5, h6 {
+  text-align: left !important;
+}
+
+/* 保持特定元素的原始对齐方式 */
+.news-container, .links, .abbr, div[style*="text-align: center"] {
+  text-align: inherit;
+}
+
+/* 调整头像和名字的样式 */
+.profile {
+  text-align: center !important;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.profile h1 {
+  text-align: center !important;
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.profile h2 {
+  text-align: center !important;
+  font-size: 1.5rem;
+  border-bottom: none;
+  margin-top: 5px !important;
+}
+
+.profile h2:after {
+  display: none;
+}
+
+.profile p {
+  text-align: center !important;
+  margin-top: 5px;
+}
+
+/* 确保所有标题居中 */
+.name, .position, .affiliation, .email {
+  text-align: center !important;
+}
+
+/* 居中显示头像、名字和个人信息 */
+/* header {
+  text-align: center !important;
+} */
+
+/* 调整左侧个人信息栏布局 */
+.wrapper {
+  display: flex;
+  margin-top: 50px; /* 为顶部深色模式按钮留出空间 */
+}
+
+header {
+  position: relative;
+  width: 270px;
+  height: 100vh; /* 设置高度为视口高度 */
+  padding: 20px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+  overflow-y: auto; /* 内容过多时允许滚动 */
+  scrollbar-width: thin; /* Firefox的滚动条样式 */
+  -ms-overflow-style: none; /* IE的滚动条样式 */
+}
+
+/* 美化 Webkit 浏览器的滚动条 */
+header::-webkit-scrollbar {
+  width: 6px;
+}
+
+header::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+header::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+[data-theme="dark"] header::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 调整右侧主要内容区域 */
+section {
+  margin-left: 300px; /* 270px + 30px margin */
+  padding: 0 30px;
+  width: calc(100% - 330px); /* 考虑左边距和padding */
+  min-height: 100vh;
+}
+
+/* 移动设备适配 */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  header {
+    position: static; /* 在移动设备上改回静态定位 */
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  section {
+    margin-left: 0; /* 移除左边距 */
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+header .image.avatar {
+  position: relative;
+  margin-bottom: 20px !important;
+}
+
+header .image.avatar img {
+  border: 4px solid white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .image.avatar img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+[data-theme="dark"] header .image.avatar img {
+  border-color: #2d2d40;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] header .image.avatar img:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+header h1 {
+  text-align: center !important;
+  width: 100%;
+}
+
+header position,
+header autocolor,
+header email,
+header a {
+  display: block;
+  text-align: center !important;
+}
+
+header .social-icons {
+  text-align: center !important;
+  display: block;
+}
+
+/* 确保社交图标居中显示 */
+header .social-icons a {
+  display: inline-block;
+}
+
+/* 减少个人信息字段之间的间距 */
+header br {
+  display: none;  /* 移除换行符 */
+}
+
+header position {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+header a[href*="ecnu.edu.cn"] {
+  margin-top: 0;
+  margin-bottom: 5px;
+  display: block;
+}
+
+header email {
+  margin-top: 0;
+  display: block;
+}
+
+/* 调整社交图标的位置 */
+header .social-icons {
+  margin-top: 10px !important;
+}
+
+/* 确保所有元素紧凑排列 */
+header > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 为特定元素添加适当的间距 */
+header h1 {
+  margin-bottom: 5px !important;
+}
+
+/* 确保头像下方有适当的间距 */
+header .image.avatar {
+  margin-bottom: 10px !important;
+}
+
+/* 论文条目悬停效果 */
+.publications ol.bibliography li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.02);
+}
+
+[data-theme="dark"] .publications ol.bibliography li:hover {
+  background-color: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* 论文标签基础样式 */
+.publications .links .tag {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+/* LLM4DB 标签 */
+.publications .links .tag-llm4db {
+  background-color: rgba(25, 118, 210, 0.1);
+  color: #1976d2;
+}
+
+/* Data Analytics 标签 */
+.publications .links .tag-data-analytics {
+  background-color: rgba(156, 39, 176, 0.1);
+  color: #9c27b0;
+}
+
+/* Storage Engine 标签 */
+.publications .links .tag-storage-engine {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+}
+
+/* Distributed Systems 标签 */
+.publications .links .tag-distributed-database-systems,
+.publications .links .tag-distributed-systems {
+  background-color: rgba(230, 81, 0, 0.1);
+  color: #e65100;
+}
+
+/* Coordination Services 标签 */
+.publications .links .tag-coordination-services {
+  background-color: rgba(0, 150, 136, 0.1);
+  color: #009688;
+}
+
+/* Replication 标签 */
+.publications .links .tag-replication {
+  background-color: rgba(233, 30, 99, 0.1);
+  color: #e91e63;
+}
+
+/* Deadlock Detection 标签 */
+.publications .links .tag-deadlock-detection {
+  background-color: rgba(121, 85, 72, 0.1);
+  color: #795548;
+}
+
+/* AI4DB 标签 */
+.publications .links .tag-ai4db {
+  background-color: rgba(63, 81, 181, 0.1);
+  color: #3f51b5;
+}
+
+/* Database Tuning 标签 */
+.publications .links .tag-database-tuning {
+  background-color: rgba(255, 87, 34, 0.1);
+  color: #ff5722;
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] .publications .links .tag {
+  opacity: 0.9;
+}
+
+[data-theme="dark"] .publications .links .tag-llm4db {
+  background-color: rgba(25, 118, 210, 0.2);
+  color: #64b5f6;
+}
+
+[data-theme="dark"] .publications .links .tag-data-analytics {
+  background-color: rgba(156, 39, 176, 0.2);
+  color: #ce93d8;
+}
+
+/* ... 其他深色模式标签样式 ... */
+
+/* 滚动进度指示器 */
+.progress-container {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--primary-color);
+  width: 0%;
+}
+
+/* 过滤按钮样式 */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.05);
+  color: var(--font-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.filter-btn:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+[data-theme="dark"] .filter-btn {
+  background-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .filter-btn:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+[data-theme="dark"] .filter-btn.active {
+  background-color: var(--primary-color);
+}
+
+/* 引用计数器样式 */
+.citation-count {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: rgba(0,0,0,0.05);
+  font-size: 0.8em;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+[data-theme="dark"] .citation-count {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* 论文详情弹窗样式 */
+.paper-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background-color: var(--bg-color);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 70%;
+  max-width: 800px;
+  animation: slideIn 0.3s;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: var(--font-color);
+}
+
+.modal-title {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.modal-abstract {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.02);
+  border-radius: 8px;
+}
+
+[data-theme="dark"] .modal-abstract {
+  background-color: rgba(255,255,255,0.05);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes slideIn {
+  from {transform: translateY(-50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* 主题切换动画 */
+body, a, h1, h2, h3, h4, h5, h6, p, li, .publications .title, .publications .author, .publications .periodical {
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.dark-mode-toggle-top button {
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle-top button:hover {
+  transform: rotate(30deg);
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  /* 调整研究兴趣布局 */
+  #research-interests + ul {
+    flex-direction: column;
+  }
+
+  #research-interests + ul > li {
+    flex: 1 1 100%;
+  }
+
+  /* 调整过滤按钮 */
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+
+  /* 调整搜索框 */
+  #paper-search {
+    width: 90% !important;
+  }
+
+  /* 调整论文列表 */
+  .publications .abbr {
+    display: none !important;
+  }
+
+  .publications .row > div:first-child {
+    display: none;
+  }
+
+  .publications .row > div:last-child {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* 返回顶部按钮样式 */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+
+#back-to-top button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+#back-to-top button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] #back-to-top button {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] #back-to-top button:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* 左侧个人信息栏布局 */
+.wrapper {
+  display: flex;
+  margin-top: 50px; /* 为顶部深色模式按钮留出空间 */
+}
+
+header {
+  position: relative; /* 改为相对定位，这样会随页面滚动 */
+  width: 270px;
+  padding: 20px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+/* 调整右侧主要内容区域 */
+section {
+  margin-left: 30px; /* 调整与左侧的间距 */
+  padding: 0 30px;
+  width: calc(100% - 300px); /* 270px + 30px margin */
+  min-height: 100vh;
+}
+
+/* 移动设备适配 */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  header {
+    width: 100%;
+    padding: 20px;
+  }
+
+  section {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Back to Home 按钮样式 */
+.back-home-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.back-home-btn .home-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  font-size: 0.95em;
+}
+
+.back-home-btn .home-link i {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.back-home-btn .home-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background-color: var(--primary-color);
+}
+
+.back-home-btn .home-link:hover i {
+  transform: translateX(-3px);
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] .back-home-btn .home-link {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] .back-home-btn .home-link:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* 移动设备适配 */
+@media (max-width: 768px) {
+  .back-home-btn {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .back-home-btn .home-link {
+    padding: 10px 16px;
+    font-size: 0.9em;
+  }
+}
+
+/* Research Interests 列表美化：自定义符号 */
+#research-interests ~ ul,
+#research-interests ~ ul ul {
+  list-style: none !important;
+  padding-left: 20px;
+}
+
+#research-interests ~ ul > li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+#research-interests ~ ul > li:before {
+  content: "❖";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 0.85em;
+  top: 5px;
+}
+
+#research-interests ~ ul > li > ul > li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+#research-interests ~ ul > li > ul > li:before {
+  content: "✤";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 0.9em;
+  opacity: 0.85;
+  top: 5px;
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] #research-interests ~ ul > li:before,
+[data-theme="dark"] #research-interests ~ ul > li > ul > li:before {
+  color: var(--link-color);
+}
+
+/* News 列表美化：自定义符号 */
+#news + .news-container ul {
+  list-style: none !important;
+  padding-left: 20px;
+}
+
+#news + .news-container ul > li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+#news + .news-container ul > li:before {
+  content: "📌";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1em;
+  color: var(--primary-color);
+  opacity: 0.85;
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] #news + .news-container ul > li:before {
+  color: var(--link-color);
+}
+
+/* 让主页左侧信息栏（header）在桌面端始终可见 */
+@media (min-width: 769px) {
+  .wrapper {
+    align-items: stretch;
+    min-height: 100vh;
+  }
+  header {
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+    height: fit-content;
+  }
+}
+
+/* 美化所有区块标题前的 Font Awesome 图标 */
+h2 > i.fas, h2 > i.fab, h2 > i.far,
+h3 > i.fas, h3 > i.fab, h3 > i.far,
+h4 > i.fas, h4 > i.fab, h4 > i.far {
+  color: var(--primary-color);
+  font-size: 1.25em;
+  margin-right: 10px;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 4px rgba(48,42,230,0.10));
+  transition: transform 0.2s, color 0.2s;
+}
+
+h2 > i.fas:hover, h2 > i.fab:hover, h2 > i.far:hover,
+h3 > i.fas:hover, h3 > i.fab:hover, h3 > i.far:hover,
+h4 > i.fas:hover, h4 > i.fab:hover, h4 > i.far:hover {
+  color: #ff9800;
+  transform: scale(1.18) rotate(-8deg);
+  filter: drop-shadow(0 4px 8px rgba(255,152,0,0.15));
+}
+
+[data-theme="dark"] h2 > i.fas,
+[data-theme="dark"] h2 > i.fab,
+[data-theme="dark"] h2 > i.far,
+[data-theme="dark"] h3 > i.fas,
+[data-theme="dark"] h3 > i.fab,
+[data-theme="dark"] h3 > i.far,
+[data-theme="dark"] h4 > i.fas,
+[data-theme="dark"] h4 > i.fab,
+[data-theme="dark"] h4 > i.far {
+  color: #b7aaff !important;
+  filter: drop-shadow(0 2px 8px #222);
+}
+
+[data-theme="dark"] h2 > i.fas:hover,
+[data-theme="dark"] h2 > i.fab:hover,
+[data-theme="dark"] h2 > i.far:hover,
+[data-theme="dark"] h3 > i.fas:hover,
+[data-theme="dark"] h3 > i.fab:hover,
+[data-theme="dark"] h3 > i.far:hover,
+[data-theme="dark"] h4 > i.fas:hover,
+[data-theme="dark"] h4 > i.fab:hover,
+[data-theme="dark"] h4 > i.far:hover {
+  color: #ffd166 !important;
+  filter: drop-shadow(0 4px 12px #444);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px; /* 行间距6px，列间距10px */
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.links .btn {
+  margin: 0 !important; /* 移除原有按钮间距 */
+  white-space: nowrap;  /* 防止按钮内文字换行 */
+  padding: 2px 10px;
+  font-size: 12px;
+  min-width: 0;
+}
+
+.links .btn {
+  font-size: 11px;
+  padding: 2px 8px;
+}
+
+div.pub-notes, .pub-notes strong, .pub-notes i {
+  color: #e74d3c !important;
+  font-size: 0.98em;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(231,77,60,0.08);
+  display: block;
+}
+
+[data-theme="dark"] div.pub-notes,
+[data-theme="dark"] .pub-notes strong,
+[data-theme="dark"] .pub-notes i {
+  color: #ff6f61 !important;
+  text-shadow: 0 1px 4px #000;
+}
+
+.tags {
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+
+.tag {
+  display: inline-block;
+  background: #f3f3f3;
+  color: #302AE6;
+  border-radius: 12px;
+  padding: 2px 12px;
+  font-size: 0.80em;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
+  border: 1px solid #e0e0e0;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* 主题色标签（根据你常用的标签名自定义） */
+.tag-llm4db { background: #ffe082; color: #795548; border-color: #ffe082; }
+.tag-data-analytics { background: #b2ebf2; color: #006064; border-color: #b2ebf2; }
+.tag-distributed-database-systems { background: #c5e1a5; color: #33691e; border-color: #c5e1a5; }
+.tag-coordination-services { background: #f8bbd0; color: #ad1457; border-color: #f8bbd0; }
+.tag-storage-engine { background: #d1c4e9; color: #4527a0; border-color: #d1c4e9; }
+.tag-replication { background: #ffccbc; color: #bf360c; border-color: #ffccbc; }
+.tag-deadlock-detection { background: #b3e5fc; color: #01579b; border-color: #b3e5fc; }
+.tag-ai4db { background: #fff9c4; color: #827717; border-color: #fff9c4; }
+.tag-database-tuning { background: #c8e6c9; color: #1b5e20; border-color: #c8e6c9; }
+
+.tag:hover {
+  filter: brightness(0.95);
+  box-shadow: 0 2px 8px rgba(48,42,230,0.08);
+  opacity: 0.95;
+}
+
+[data-theme="dark"] .tag {
+  border-color: #444;
+  filter: brightness(0.85);
+}

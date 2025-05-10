@@ -1,0 +1,47 @@
+<div id="back-to-top-btn" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 9999; cursor: pointer;">
+  <button style="width: 50px; height: 50px; border-radius: 50%; background-color: #302AE6; color: white; border: none; box-shadow: 0 2px 10px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+
+<script>
+  // 等待文档加载完成
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTopBtn = document.getElementById('back-to-top-btn');
+
+    if (backToTopBtn) {
+      // 添加点击事件
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      });
+
+      // 添加滚动监听
+      window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 300) {
+          backToTopBtn.style.display = 'block';
+        } else {
+          backToTopBtn.style.display = 'none';
+        }
+      });
+
+      // 添加悬停效果
+      var button = backToTopBtn.querySelector('button');
+      if (button) {
+        button.addEventListener('mouseover', function() {
+          this.style.transform = 'translateY(-3px)';
+          this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+        });
+
+        button.addEventListener('mouseout', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+        });
+      }
+    }
+
+    // 初始检查滚动位置
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      if (backToTopBtn) backToTopBtn.style.display = 'block';
+    }
+  });
+</script>
