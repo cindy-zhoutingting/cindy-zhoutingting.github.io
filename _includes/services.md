@@ -1,5 +1,7 @@
 ## <i class="fas fa-scale-balanced"></i> 学术服务
-<ul style="margin:0 0 5px;">
+
+<ul class="service-list">
   <li>上海并购金融研究院兼职研究员</li>
+  <li>担任外国经济与管理》、Emerging Markets Finance and Trade 等国内外学术期刊审稿人</li>
   <li>2024《公司治理》课程助教</li>
 </ul>

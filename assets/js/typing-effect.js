@@ -1,44 +1,58 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const texts = [
-    "Large Language Models for Databases",
-    "AI4DB & DB4AI",
-    "Database Performance Optimization",
-    "Distributed Database Systems",
-    "Natural Language Interfaces"
-  ];
+/* 侧栏副标题：打字机轮播 */
+(function () {
+  "use strict";
 
-  let currentTextIndex = 0;
-  let currentCharIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 100;
+  var TEXTS = ["公司金融", "企业并购", "公司治理", "数字化转型"];
 
-  function typeEffect() {
-    const typingElement = document.getElementById('typing-effect');
-    if (!typingElement) return;
+  function start() {
+    var el = document.getElementById("typing-effect");
+    if (!el) return;
 
-    const currentText = texts[currentTextIndex];
-
-    if (isDeleting) {
-      typingElement.textContent = currentText.substring(0, currentCharIndex - 1);
-      currentCharIndex--;
-      typingSpeed = 50;
-    } else {
-      typingElement.textContent = currentText.substring(0, currentCharIndex + 1);
-      currentCharIndex++;
-      typingSpeed = 100;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.textContent = TEXTS.join(" · ");
+      return;
     }
 
-    if (!isDeleting && currentCharIndex === currentText.length) {
-      isDeleting = true;
-      typingSpeed = 1000; // 暂停一会儿
-    } else if (isDeleting && currentCharIndex === 0) {
-      isDeleting = false;
-      currentTextIndex = (currentTextIndex + 1) % texts.length;
-      typingSpeed = 500; // 切换文本前暂停一会儿
+    var textIndex = 0;
+    var charIndex = 0;
+    var deleting = false;
+    var hold = 0;
+
+    function tick() {
+      var current = TEXTS[textIndex];
+      var delay;
+
+      if (deleting) {
+        charIndex--;
+        delay = 45;
+      } else {
+        charIndex++;
+        delay = 110;
+      }
+
+      el.textContent = current.slice(0, charIndex);
+
+      if (!deleting && charIndex === current.length) {
+        deleting = true;
+        hold = 2;
+        delay = 1500;
+      } else if (deleting && charIndex === 0) {
+        deleting = false;
+        textIndex = (textIndex + 1) % TEXTS.length;
+        delay = 420;
+      }
+
+      if (hold > 0 && delay < 1000) hold -= 1;
+
+      window.setTimeout(tick, delay);
     }
 
-    setTimeout(typeEffect, typingSpeed);
+    window.setTimeout(tick, 520);
   }
 
-  typeEffect();
-});
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();

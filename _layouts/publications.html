@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: "zh-CN" }}">
   <head>
     <title>{{ site.title }} - Publications</title>
 
@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
+    <meta name="theme-color" content="#f5f6fb">
 
     <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.baseurl }}/{{ site.favicon_dark }}" type="image/png" />
     <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.baseurl }}/{{ site.favicon }}" type="image/png" />
@@ -29,83 +30,37 @@
     {% endif %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">
 
-    <!-- 添加返回主页按钮的样式 -->
-    <style>
-      .back-home {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-      }
-
-      .back-home a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px 16px;
-        width: 100%;
-        height: 100%;
-        background-color: var(--bg-color);
-        color: var(--font-color) !important;
-        border: 1px solid var(--border-color);
-        border-radius: 25px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        font-size: 0.9em;
-        cursor: pointer;
-      }
-
-      .back-home a:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        text-decoration: none;
-        border-bottom: 1px solid var(--border-color);
-        background-color: var(--primary-color);
-        color: white !important;
-      }
-
-      .back-home i {
-        margin-right: 8px;
-        font-size: 0.9em;
-      }
-
-      /* full publication 与 top 距离调整 */
-      .content {
-        max-width: 1200px;
-        margin: 10px auto 20px;
-        padding: 0 20px;
-      }
-
-      [data-theme="dark"] .back-home a {
-        background-color: var(--bg-color);
-        border-color: var(--border-color);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      }
-
-      [data-theme="dark"] .back-home a:hover {
-        background-color: var(--primary-color);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      }
-
-      /* 移动设备适配 */
-      @media (max-width: 768px) {
-        .content {
-          margin-top: 40px;
-        }
-        .back-home {
-          top: 15px;
-        }
-        .back-home a {
-          padding: 6px 12px;
-          font-size: 0.85em;
-        }
-      }
-    </style>
+    <script>
+      // 首帧即确定主题，避免闪白
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var stored = localStorage.getItem('theme');
+        } catch (e) { var stored = null; }
+        var dark = stored
+          ? stored === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
   </head>
   <body class="publications-page">
-    <!-- 修改返回主页按钮的链接 -->
+    <!-- 背景装饰层 -->
+    <div class="bg-decor" aria-hidden="true">
+      <div class="aurora a1"></div>
+      <div class="aurora a2"></div>
+      <div class="aurora a3"></div>
+      <svg class="bg-mountains" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+        <path class="mt3" d="M0,150 C160,110 260,170 380,140 C500,110 600,165 720,138 C840,112 940,168 1060,142 C1180,116 1300,170 1440,138 L1440,300 L0,300 Z"/>
+        <path class="mt2" d="M0,196 C130,168 250,214 360,190 C470,166 560,206 690,186 C820,166 900,208 1030,190 C1160,172 1290,212 1440,186 L1440,300 L0,300 Z"/>
+        <path class="mt1" d="M0,238 C150,214 280,252 420,232 C560,212 680,248 820,230 C960,212 1080,250 1220,232 C1330,218 1390,240 1440,230 L1440,300 L0,300 Z"/>
+      </svg>
+    </div>
+    <div class="bg-noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- 返回主页 -->
     <div class="back-home-btn">
       <a href="{{ site.baseurl }}/" class="home-link">
         <i class="fas fa-arrow-left"></i>
@@ -117,7 +72,7 @@
     <div class="top-bar">
       <div class="container">
         <div class="dark-mode-toggle-top">
-          <button id="dark-mode-btn" aria-label="Toggle dark mode">
+          <button id="dark-mode-btn" aria-label="切换深色模式" aria-pressed="false">
             <i class="fas fa-moon"></i>
           </button>
         </div>
@@ -129,39 +84,35 @@
       {{ content }}
     </div>
 
-    <!-- 深色模式切换脚本 -->
-    <script>
-      const darkModeBtn = document.getElementById('dark-mode-btn');
-      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-      const currentTheme = localStorage.getItem('theme');
-
-      if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-      } else if (currentTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-      } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-      }
-
-      darkModeBtn.addEventListener('click', function() {
-        let theme = document.documentElement.getAttribute('data-theme');
-        if (theme === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light');
-          darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
-          darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-      });
-    </script>
-
-    <!-- 引入其他必要的脚本 -->
-    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     {% include back-to-top.html %}
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+
+    <script>
+      // 深色模式切换
+      (function () {
+        var btn = document.getElementById('dark-mode-btn');
+        if (!btn) return;
+        var root = document.documentElement;
+
+        function render() {
+          var dark = root.getAttribute('data-theme') === 'dark';
+          btn.innerHTML = dark
+            ? '<i class="fas fa-sun"></i>'
+            : '<i class="fas fa-moon"></i>';
+          btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', dark ? '#070b18' : '#f5f6fb');
+        }
+
+        btn.addEventListener('click', function () {
+          var dark = root.getAttribute('data-theme') === 'dark';
+          root.setAttribute('data-theme', dark ? 'light' : 'dark');
+          try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
+          render();
+        });
+
+        render();
+      })();
+    </script>
   </body>
 </html>

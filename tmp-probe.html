@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+<script>try{localStorage.setItem("theme","light")}catch(e){}</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>💁‍♀️ 周胜娣 - Homepage</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.">
+    <meta name="theme-color" content="#f5f6fb">
+    
+    <meta name="keywords" content="minimal light">
+    
+    
+    <link rel="canonical" href="https://minimal-light-theme.yliu.me/">
+    
+
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/iam.png" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/iam.png" type="image/png">
+    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    
+    <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
+    
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/publications.css">
+    
+    <link rel="stylesheet" href="./assets/css/custom.css">
+
+    <script>
+      // 首帧即确定主题，避免闪白
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var stored = localStorage.getItem('theme');
+        } catch (e) { var stored = null; }
+        var dark = stored
+          ? stored === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- 背景装饰层 -->
+    <div class="bg-decor" aria-hidden="true">
+      <div class="aurora a1"></div>
+      <div class="aurora a2"></div>
+      <div class="aurora a3"></div>
+      <svg class="bg-mountains" viewbox="0 0 1440 300" preserveaspectratio="none" aria-hidden="true">
+        <path class="mt3" d="M0,150 C160,110 260,170 380,140 C500,110 600,165 720,138 C840,112 940,168 1060,142 C1180,116 1300,170 1440,138 L1440,300 L0,300 Z"></path>
+        <path class="mt2" d="M0,196 C130,168 250,214 360,190 C470,166 560,206 690,186 C820,166 900,208 1030,190 C1160,172 1290,212 1440,186 L1440,300 L0,300 Z"></path>
+        <path class="mt1" d="M0,238 C150,214 280,252 420,232 C560,212 680,248 820,230 C960,212 1080,250 1220,232 C1330,218 1390,240 1440,230 L1440,300 L0,300 Z"></path>
+      </svg>
+    </div>
+    <div class="bg-noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <div class="top-bar">
+      <div class="container">
+        <div class="dark-mode-toggle-top">
+          <button id="dark-mode-btn" aria-label="切换深色模式" aria-pressed="false">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <header>
+        
+        <a class="image avatar"><img src="./assets/img/profile.jpg" alt="💁‍♀️ 周胜娣"></a>
+        
+
+        <h1>💁‍♀️ 周胜娣</h1>
+
+        <p class="tagline"><span id="typing-effect"></span><span class="caret" aria-hidden="true"></span></p>
+
+        <div class="meta">
+          
+          <span class="meta-item"><i class="fas fa-briefcase"></i><position>讲师</position></span>
+          
+          
+            
+            <span class="meta-item"><i class="fas fa-building-columns"></i><autocolor>华东政法大学商学院</autocolor></span>
+            
+          
+          
+          <button type="button" class="meta-item email-copy" data-email="sdzhou1227@stu.ecnu.edu.cn" aria-label="复制邮箱地址">
+            <i class="fas fa-envelope"></i><email>sdzhou1227(at)stu.ecnu.edu.cn</email>
+          </button>
+          
+        </div>
+
+        <div class="social-icons">
+          
+          <a style="margin: 0 5px 0 0" href="https://scholar.google.com/" aria-label="Google Scholar" target="_blank" rel="noopener">
+            <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
+          </a>
+          
+
+          
+
+          
+          <a style="margin: 0 5px 0 0" href="assets/files/cv.pdf" aria-label="CV" target="_blank" rel="noopener">
+            <i class="ai ai-cv" style="font-size:1.3rem;"></i>
+          </a>
+          
+
+          
+          <a style="margin: 0 5px 0 0" href="https://github.com/cindy-zhoutingting" aria-label="GitHub" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+          </a>
+          
+
+          
+
+          
+        </div>
+      </header>
+
+      <section>
+        <h2 id="-个人简介">
+<i class="fas fa-circle-user"></i> <span id="biography">个人简介</span>
+</h2>
+
+<p class="lead">
+周胜娣 (1999.02)，经济学博士，现任<a href="https://www.ecupl.edu.cn/">华东政法大学</a>商学院金融系讲师。<br>
+2021年毕业于<a href="https://www.ecnu.edu.cn/">华东师范大学</a>经济与管理学院金融学专业，获经济学学士学位；2026年毕业于华东师范大学经济与管理学院，获经济学博士学位，师从<a href="https://faculty.ecnu.edu.cn/_s35/lfq_en/main.psp">蓝发钦教授</a>。
+</p>
+
+<h2 id="research-interests">
+<i class="fas fa-flask"></i> 研究兴趣</h2>
+
+<ul class="interest-list">
+  <li class="interest-item">
+    <span class="interest-field">公司金融</span>
+    <span class="interest-tags">
+      <span class="interest-tag">风险资本</span>
+      <span class="interest-tag">企业投融资决策</span>
+      <span class="interest-tag">公司治理</span>
+    </span>
+  </li>
+
+  <li class="interest-item">
+    <span class="interest-field">法与金融</span>
+    <span class="interest-tags">
+      <span class="interest-tag">金融监管</span>
+      <span class="interest-tag">监管政策</span>
+      <span class="interest-tag">企业行为</span>
+    </span>
+  </li>
+
+  <li class="interest-item">
+    <span class="interest-field">企业信息披露</span>
+    <span class="interest-tags">
+      <span class="interest-tag">资本市场信息披露</span>
+      <span class="interest-tag">信息环境</span>
+      <span class="interest-tag">市场反应</span>
+    </span>
+  </li>
+
+  <li class="interest-item">
+    <span class="interest-field">生成式人工智能与金融决策</span>
+    <span class="interest-tags">
+      <span class="interest-tag">生成式人工智能</span>
+      <span class="interest-tag">数字技术应用</span>
+      <span class="interest-tag">智能金融监管</span>
+    </span>
+  </li>
+</ul>
+
+<h2 id="-已发表论文-查看全部">
+<i class="fas fa-fire"></i> <span id="publications">已发表论文</span> <a href="/publications">查看全部</a>
+</h2>
+
+<p><em>所有论文按发表年份降序排列（* 表示通讯作者）。</em></p>
+
+<div class="publications">
+<ol class="bibliography">
+
+
+
+
+  
+
+  <li class="publication-item">
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      
+      <img src="./assets/img/%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E.jpg" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+      
+      <abbr class="badge">世界经济</abbr>
+      
+      
+    </div>
+    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+        <div class="title"><a href="https://kns-cnki-net-443.webvpn.las.ac.cn/kcms2/article/abstract?v=Jy1bRTva-nVC4npcuB5U5pxbX9ftywZYm6DyVebOvgzM3b8DdQ9E5W-D8JQx_iz0xdlln45GcyTBIq0UQTL3VIZHQg_sW06tYnINb-lg7UAkZWHfT30FD-fD_LNfuZVPVvTSAlOJTnw1CRZVndKGJuqCZfZicBj86OvI7awMYRf5B5HpQ6f6EQ==&uniplatform=NZKPT&language=CHS">数字化转型、企业适度规模与并购行为</a></div>
+        <div class="author">
+          蓝发钦, <b>周胜娣</b>*
+        </div>
+        <div class="periodical" style="font-weight: bold; font-size: 1.08em; color: #0A4B8F; margin-bottom: 2px;">
+          <em>世界经济, 2025.</em>
+        </div>
+      <div class="links">
+        
+        <a href="https://kns-cnki-net-443.webvpn.las.ac.cn/kcms2/article/abstract?v=Jy1bRTva-nVC4npcuB5U5pxbX9ftywZYm6DyVebOvgzM3b8DdQ9E5W-D8JQx_iz0xdlln45GcyTBIq0UQTL3VIZHQg_sW06tYnINb-lg7UAkZWHfT30FD-fD_LNfuZVPVvTSAlOJTnw1CRZVndKGJuqCZfZicBj86OvI7awMYRf5B5HpQ6f6EQ==&uniplatform=NZKPT&language=CHS" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      <!-- 显示标签 -->
+      
+      <div class="tags">
+        
+          
+          <span class="tag tag-数字化转型">数字化转型</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  </li>
+
+  
+
+  <li class="publication-item">
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      
+      <img src="./assets/img/EAP.jpg" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+      
+      <abbr class="badge">EAP</abbr>
+      
+      
+    </div>
+    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+        <div class="title"><a href="https://www.sciencedirect.com/science/article/pii/S031359262500178X">Exchange Rate Volatility and Supply Chain Disruption</a></div>
+        <div class="author">
+          Chang Li, Yuhui Shao, Tianzhu Wang, <b>Shengdi Zhou</b>*
+        </div>
+        <div class="periodical" style="font-weight: bold; font-size: 1.08em; color: #0A4B8F; margin-bottom: 2px;">
+          <em>Economic Analysis and Policy, 2025.</em>
+        </div>
+      <div class="links">
+        
+        <a href="https://www.sciencedirect.com/science/article/pii/S031359262500178X" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      <!-- 显示标签 -->
+      
+      <div class="tags">
+        
+          
+          <span class="tag tag-供应链">供应链</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  </li>
+
+  
+
+  <li class="publication-item">
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      
+      <img src="./assets/img/%E5%A4%96%E5%9B%BD%E7%BB%8F%E6%B5%8E%E4%B8%8E%E7%AE%A1%E7%90%86.jpg" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+      
+      <abbr class="badge">外国经济与管理</abbr>
+      
+      
+    </div>
+    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+        <div class="title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=ZZIl2iqmIcTCk6JQO0OiYEkGxvwjp2mLhasAzbS-894IJSg_VuiRiyP4GJdqNqHndqOWti1bvYbL6daVyjbR68kw1GAzUxNL08vip9hf6U0iRkG6q7fkd9b-FWRKVppkSOOpkyIngivLL79RMvlcluukXlRguxv3DdcIu0WMrzbG9OUimTO6S0xl7pFXDRuV&uniplatform=NZKPT&language=CHS">司法改善与年报披露相似性——来自我国巡回法庭准自然实验的经验证据</a></div>
+        <div class="author">
+          <b>周胜娣</b>*, 蓝发钦
+        </div>
+        <div class="periodical" style="font-weight: bold; font-size: 1.08em; color: #0A4B8F; margin-bottom: 2px;">
+          <em>外国经济与管理, 2024.</em>
+        </div>
+      <div class="links">
+        
+        <a href="https://kns.cnki.net/kcms2/article/abstract?v=ZZIl2iqmIcTCk6JQO0OiYEkGxvwjp2mLhasAzbS-894IJSg_VuiRiyP4GJdqNqHndqOWti1bvYbL6daVyjbR68kw1GAzUxNL08vip9hf6U0iRkG6q7fkd9b-FWRKVppkSOOpkyIngivLL79RMvlcluukXlRguxv3DdcIu0WMrzbG9OUimTO6S0xl7pFXDRuV&uniplatform=NZKPT&language=CHS" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      <!-- 显示标签 -->
+      
+      <div class="tags">
+        
+          
+          <span class="tag tag-经济与司法">经济与司法</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  </li>
+
+  
+
+  <li class="publication-item">
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      
+      <img src="./assets/img/%E4%B8%8A%E6%B5%B7%E7%BB%8F%E6%B5%8E%E7%A0%94%E7%A9%B6.jpg" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+      
+      <abbr class="badge">上海经济研究</abbr>
+      
+      
+    </div>
+    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+        <div class="title"><a href="https://kns.cnki.net/kns8s/defaultresult/index?crossids=YSTT4HG0%2CLSTPFY1C%2CJUP3MUPD%2CMPMFIG1A%2CWQ0UVIAA%2CBLZOG7CK%2CPWFIRAGL%2CEMRPGLPA%2CNLBO1Z6R%2CNN3FJMUV&korder=SU&kw=%E5%91%A8%E8%83%9C%E5%A8%A3">数字化转型对企业绩效影响研究——基于数字化深度与广度视角的实证分析</a></div>
+        <div class="author">
+          吴洁*, <b>周胜娣</b>, 王改银
+        </div>
+        <div class="periodical" style="font-weight: bold; font-size: 1.08em; color: #0A4B8F; margin-bottom: 2px;">
+          <em>上海经济研究, 2024.</em>
+        </div>
+      <div class="links">
+        
+        <a href="https://kns.cnki.net/kns8s/defaultresult/index?crossids=YSTT4HG0%2CLSTPFY1C%2CJUP3MUPD%2CMPMFIG1A%2CWQ0UVIAA%2CBLZOG7CK%2CPWFIRAGL%2CEMRPGLPA%2CNLBO1Z6R%2CNN3FJMUV&korder=SU&kw=%E5%91%A8%E8%83%9C%E5%A8%A3" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      <!-- 显示标签 -->
+      
+      <div class="tags">
+        
+          
+          <span class="tag tag-数字化转型">数字化转型</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  </li>
+
+  
+
+  <li class="publication-item">
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      
+      <img src="./assets/img/%E6%8A%95%E8%B5%84%E7%A0%94%E7%A9%B6.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+      
+      <abbr class="badge">投资研究</abbr>
+      
+      
+    </div>
+    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+        <div class="title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=ZZIl2iqmIcQ9fAn5MdhZlpGxyh0ln2nr_I26kyWhPprq6Bm8oQEFNyLrzoJJjn7pSVNn3Fk3Op_b-zaybT5eE5ukjr4DJtVaDtAHA0_ywCIP9QTKaUTHgJOrTGOUTxOe_MHx3-BwbHC6-aWSjoc97fx5qr0058t1JBvKVKz9QdsNHduB275Fd5lOYna9ooGd&uniplatform=NZKPT&language=CHS">融资约束下的企业并购行为：求救动机还是制约条件？</a></div>
+        <div class="author">
+          <b>周胜娣</b>*, 蓝发钦
+        </div>
+        <div class="periodical" style="font-weight: bold; font-size: 1.08em; color: #0A4B8F; margin-bottom: 2px;">
+          <em>投资研究, 2024.</em>
+        </div>
+      <div class="links">
+        
+        <a href="https://kns.cnki.net/kcms2/article/abstract?v=ZZIl2iqmIcQ9fAn5MdhZlpGxyh0ln2nr_I26kyWhPprq6Bm8oQEFNyLrzoJJjn7pSVNn3Fk3Op_b-zaybT5eE5ukjr4DJtVaDtAHA0_ywCIP9QTKaUTHgJOrTGOUTxOe_MHx3-BwbHC6-aWSjoc97fx5qr0058t1JBvKVKz9QdsNHduB275Fd5lOYna9ooGd&uniplatform=NZKPT&language=CHS" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      <!-- 显示标签 -->
+      
+      <div class="tags">
+        
+          
+          <span class="tag tag-企业并购">企业并购</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  </li>
+
+  
+
+  <li class="publication-item">
+  <div class="pub-row">
+    <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+      
+      <img src="./assets/img/DESD.jpg" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+      
+      <abbr class="badge">DESD</abbr>
+      
+      
+    </div>
+    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+        <div class="title"><a href="https://link.springer.com/article/10.1007/s44265-024-00028-3">Determinants of Successful Mergers and Acquisitions in China：Evidence from Machine Learning</a></div>
+        <div class="author">
+          <b>周胜娣</b>*, 蓝发钦, 胡梓锐, 刘泳廷
+        </div>
+        <div class="periodical" style="font-weight: bold; font-size: 1.08em; color: #0A4B8F; margin-bottom: 2px;">
+          <em>Digital Economy and Sustainable Development, 2024.</em>
+        </div>
+      <div class="links">
+        
+        <a href="https://link.springer.com/article/10.1007/s44265-024-00028-3" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      <!-- 显示标签 -->
+      
+      <div class="tags">
+        
+          
+          <span class="tag tag-企业并购">企业并购</span>
+        
+      </div>
+      
+    </div>
+  </div>
+  </li>
+
+
+</ol>
+</div>
+
+<h2 id="-学术服务">
+<i class="fas fa-scale-balanced"></i> 学术服务</h2>
+
+<ul class="service-list">
+  <li>上海并购金融研究院兼职研究员</li>
+  <li>担任外国经济与管理》、Emerging Markets Finance and Trade 等国内外学术期刊审稿人</li>
+  <li>2024《公司治理》课程助教</li>
+</ul>
+
+<h2 id="-教育经历">
+<i class="fas fa-layer-group"></i> <span id="experience">教育经历</span>
+</h2>
+
+<ul class="timeline">
+  <li>
+    <div class="tl-head">
+<span class="tl-time">2023.09 – 2026.06</span><span class="tl-title">博士</span>
+</div>
+    <div class="tl-desc">经济与管理学院（金融专业） · 华东师范大学</div>
+  </li>
+  <li>
+    <div class="tl-head">
+<span class="tl-time">2021.09 – 2023.06</span><span class="tl-title">硕士（后转硕博连读）</span>
+</div>
+    <div class="tl-desc">经济与管理学院（金融专业） · 华东师范大学</div>
+  </li>
+  <li>
+    <div class="tl-head">
+<span class="tl-time">2017.09 – 2021.06</span><span class="tl-title">本科</span>
+</div>
+    <div class="tl-desc">经济与管理学院（金融专业） · 华东师范大学</div>
+  </li>
+  <li>
+    <div class="tl-head">
+<span class="tl-time">2014.09 – 2017.06</span><span class="tl-title">高中</span>
+</div>
+    <div class="tl-desc">栖霞市第一中学 · 烟台</div>
+  </li>
+</ul>
+
+<h2 id="-代表性奖项">
+<i class="fas fa-award"></i> 代表性奖项</h2>
+
+<ul class="award-list">
+  <li>
+<span class="award-year">2026</span><span class="award-text">上海市优秀毕业生</span>
+</li>
+  <li>
+<span class="award-year">2026</span><span class="award-text">参与教育部人文社会科学研究项目</span>
+</li>
+  <li>
+<span class="award-year">2025</span><span class="award-text">博士研究生国家奖学金 (3/200)</span>
+</li>
+  <li>
+<span class="award-year">2025</span><span class="award-text">华东师范大学优秀学生</span>
+</li>
+  <li>
+<span class="award-year">2025</span><span class="award-text">主持华东师范大学2025年优秀博士生创新能力提升计划项目 (主题：风险投资介入与企业债务违约风险)</span>
+</li>
+  <li>
+<span class="award-year">2025</span><span class="award-text">主持编写《2024中国证券市场典型并购案例》(已出版)</span>
+</li>
+  <li>
+<span class="award-year">2024</span><span class="award-text">参与国家社会科学基金年度一般项目</span>
+</li>
+  <li>
+<span class="award-year">2024</span><span class="award-text">Conference on Trade Patterns and Responses under Multiple Trade Risks 分会汇报，入选论文：Exchange Rate Volatility and Supply Chain Disruption</span>
+</li>
+  <li>
+<span class="award-year">2023</span><span class="award-text">第四届浦江论坛优胜奖，获奖论文：融资约束下的企业并购行为：求救动机还是制约条件？</span>
+</li>
+  <li>
+<span class="award-year">2023</span><span class="award-text">第九届中国金融管理年会，入会论文：数字化转型、企业适度规模与并购行为</span>
+</li>
+  <li>
+<span class="award-year">2023</span><span class="award-text">统计建模大赛上海市三等奖，获奖论文：Determinants of Successful Mergers and Acquisitions in China: Evidence from Machine Learning</span>
+</li>
+</ul>
+
+<h2 id="-访客记录">
+<i class="fas fa-map-marker-alt"></i> <span id="visitors">访客记录</span>
+</h2>
+
+<div class="visitor-card">
+  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=AE2U_zR0-ay3BLWLrNwcdHe1GiEMnnkd_DMKu0A2Vzc"></script>
+</div>
+
+      </section>
+    </div>
+
+    <script src="/assets/js/scale.fix.js"></script>
+    
+
+    <script>
+      // 深色模式切换
+      (function () {
+        var btn = document.getElementById('dark-mode-btn');
+        if (!btn) return;
+        var root = document.documentElement;
+
+        function render() {
+          var dark = root.getAttribute('data-theme') === 'dark';
+          btn.innerHTML = dark
+            ? '<i class="fas fa-sun"></i>'
+            : '<i class="fas fa-moon"></i>';
+          btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', dark ? '#070b18' : '#f5f6fb');
+        }
+
+        btn.addEventListener('click', function () {
+          var dark = root.getAttribute('data-theme') === 'dark';
+          root.setAttribute('data-theme', dark ? 'light' : 'dark');
+          try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
+          render();
+        });
+
+        render();
+      })();
+    </script>
+
+    <button id="back-to-top-btn" type="button" aria-label="返回顶部">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+
+    <!-- 自定义动效脚本 -->
+    <script src="/assets/js/typing-effect.js"></script>
+    <script src="/assets/js/main.js"></script>
+  
+<script>
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var rows = [];
+    function chk(label, sel){
+      document.querySelectorAll(sel).forEach(function(el,i){
+        var r = el.getBoundingClientRect(), pr = el.parentElement.getBoundingClientRect();
+        if (r.right > pr.right + 0.5 || r.left < pr.left - 0.5)
+          rows.push('OVERFLOW '+label+'#'+i+' right '+r.right.toFixed(1)+' > '+pr.right.toFixed(1));
+        if (el.scrollWidth > el.clientWidth + 1)
+          rows.push('SCROLLX '+label+'#'+i+' sw='+el.scrollWidth+' cw='+el.clientWidth);
+      });
+    }
+    chk('meta','header .meta-item');
+    chk('email','header email');
+    chk('interest','.interest-item');
+    chk('interest-field','.interest-field');
+    chk('h2','section h2');
+    chk('tag','.tag');
+    chk('tltime','.timeline .tl-time');
+    chk('pubtitle','.publications .title');
+    var de = document.documentElement;
+    rows.push('doc scrollW='+de.scrollWidth+' clientW='+de.clientWidth);
+    var f=document.querySelector('.interest-field'), t=document.querySelector('.interest-tags');
+    if(f&&t){var fr=f.getBoundingClientRect(), tr=t.getBoundingClientRect();
+      var ov=!(tr.left>=fr.right-0.5||tr.right<=fr.left+0.5||tr.top>=fr.bottom-0.5||tr.bottom<=fr.top-0.5);
+      rows.push('overlap='+ov+' field['+(fr.left|0)+','+(fr.right|0)+'] tags['+(tr.left|0)+','+(tr.right|0)+']');}
+    var mi=document.querySelector('header .meta-item');
+    rows.push('header w='+(document.querySelector('header').getBoundingClientRect().width|0));
+    var d=document.createElement('pre');
+    d.textContent='===P===\n'+(rows.length?rows.join('\n'):'NO OVERFLOW')+'\n===E===';
+    document.body.appendChild(d);
+  }, 2600);
+});
+</script>
+</body>
+</html>
