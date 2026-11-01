@@ -40,13 +40,13 @@
       // 首帧即确定主题，避免闪白
       (function () {
         document.documentElement.classList.add('js');
-        try {
-          var stored = localStorage.getItem('theme');
-        } catch (e) { var stored = null; }
-        var dark = stored
-          ? stored === 'dark'
-          : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        // 默认浅色，仅在用户手动切换过时使用其选择
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (e) {}
+        document.documentElement.setAttribute(
+          'data-theme',
+          stored === 'dark' ? 'dark' : 'light'
+        );
       })();
     </script>
   </head>
@@ -92,9 +92,9 @@
           {% endif %}
           {% if site.affiliation %}
             {% if site.affiliation_link %}
-            <a class="meta-item" href="{{ site.affiliation_link }}" rel="noopener"><i class="fas fa-building-columns"></i><autocolor>{{ site.affiliation }}</autocolor></a>
+            <a class="meta-item" href="{{ site.affiliation_link }}" rel="noopener"><i class="fas fa-scale-balanced"></i><autocolor>{{ site.affiliation }}</autocolor></a>
             {% else %}
-            <span class="meta-item"><i class="fas fa-building-columns"></i><autocolor>{{ site.affiliation }}</autocolor></span>
+            <span class="meta-item"><i class="fas fa-scale-balanced"></i><autocolor>{{ site.affiliation }}</autocolor></span>
             {% endif %}
           {% endif %}
           {% if site.email %}

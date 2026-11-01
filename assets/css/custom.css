@@ -1109,6 +1109,29 @@ section ul:not([class]) > li:hover::before { transform: scale(1.25); }
 
 [data-theme="dark"] .publications .links a.btn:hover i { color: #17150f; }
 
+/* 浅色主题下屏蔽旧主题跟随系统的深色规则（按钮白字白边不可见） */
+[data-theme="light"] .publications ol.bibliography li .links a.btn,
+[data-theme="light"] .publications ol.bibliography li .links a.btn.z-depth-0 {
+  color: var(--ink-2) !important;
+  background: var(--paper-2);
+  background-image: none;
+  border: 1px solid var(--line);
+}
+
+[data-theme="light"] .publications ol.bibliography li .links a.btn i {
+  color: var(--brand-2);
+}
+
+[data-theme="light"] .publications ol.bibliography li .links a.btn:hover {
+  color: #fffdf8 !important;
+  background: linear-gradient(135deg, var(--brand-2), var(--brand-3));
+  border-color: transparent;
+}
+
+[data-theme="light"] .publications ol.bibliography li .links a.btn:hover i {
+  color: #fffdf8;
+}
+
 /* 标签：柔和纸片 */
 .publications .tags {
   display: flex;
@@ -1253,12 +1276,13 @@ section ul:not([class]) > li:hover::before { transform: scale(1.25); }
 }
 
 .interest-field {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  min-width: 0;
   font-family: var(--font-serif);
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
   color: var(--ink);
 }
 

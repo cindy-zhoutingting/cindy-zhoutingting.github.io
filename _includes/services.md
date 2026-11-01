@@ -1,4 +1,4 @@
-## <i class="fas fa-scale-balanced"></i> 学术服务
+## <i class="fas fa-chalkboard-user"></i> 学术服务
 
 <ul class="service-list">
   <li>上海并购金融研究院兼职研究员</li>
