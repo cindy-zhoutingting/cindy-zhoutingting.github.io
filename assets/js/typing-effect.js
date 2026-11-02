@@ -1,12 +1,28 @@
-/* 侧栏副标题：打字机轮播 */
+/* 侧栏副标题：打字机轮播
+   内容自动读取页面「研究兴趣」下的方向，随 index.md 更新而同步 */
 (function () {
   "use strict";
 
-  var TEXTS = ["公司金融", "企业并购", "公司治理", "数字化转型"];
+  var FALLBACK = ["公司金融", "法与金融", "企业信息披露", "生成式人工智能与金融决策"];
+
+  // 从研究兴趣卡片中读取最新方向
+  function collect() {
+    var fields = document.querySelectorAll(".interest-list .interest-field");
+    var list = [];
+
+    Array.prototype.forEach.call(fields, function (el) {
+      var text = (el.textContent || "").trim();
+      if (text) list.push(text);
+    });
+
+    return list.length ? list : FALLBACK;
+  }
 
   function start() {
     var el = document.getElementById("typing-effect");
     if (!el) return;
+
+    var TEXTS = collect();
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       el.textContent = TEXTS.join(" · ");
@@ -16,7 +32,6 @@
     var textIndex = 0;
     var charIndex = 0;
     var deleting = false;
-    var hold = 0;
 
     function tick() {
       var current = TEXTS[textIndex];
@@ -24,30 +39,27 @@
 
       if (deleting) {
         charIndex--;
-        delay = 45;
+        delay = 40;
       } else {
         charIndex++;
-        delay = 110;
+        delay = 95;
       }
 
       el.textContent = current.slice(0, charIndex);
 
       if (!deleting && charIndex === current.length) {
         deleting = true;
-        hold = 2;
         delay = 1500;
       } else if (deleting && charIndex === 0) {
         deleting = false;
         textIndex = (textIndex + 1) % TEXTS.length;
-        delay = 420;
+        delay = 400;
       }
-
-      if (hold > 0 && delay < 1000) hold -= 1;
 
       window.setTimeout(tick, delay);
     }
 
-    window.setTimeout(tick, 520);
+    window.setTimeout(tick, 500);
   }
 
   if (document.readyState === "loading") {

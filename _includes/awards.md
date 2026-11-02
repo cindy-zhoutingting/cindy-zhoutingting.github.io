@@ -3,7 +3,7 @@
 <ul class="award-list">
   <li><span class="award-year">2026</span><span class="award-text">上海市优秀毕业生</span></li>
   <li><span class="award-year">2026</span><span class="award-text">参与教育部人文社会科学研究项目</span></li>
-  <li><span class="award-year">2025</span><span class="award-text">博士研究生国家奖学金 (3/200)</span></li>
+  <li><span class="award-year">2025</span><span class="award-text">博士研究生国家奖学金</span></li>
   <li><span class="award-year">2025</span><span class="award-text">华东师范大学优秀学生</span></li>
   <li><span class="award-year">2025</span><span class="award-text">主持华东师范大学2025年优秀博士生创新能力提升计划项目 (主题：风险投资介入与企业债务违约风险)</span></li>
   <li><span class="award-year">2025</span><span class="award-text">主持编写《2024中国证券市场典型并购案例》(已出版)</span></li>
